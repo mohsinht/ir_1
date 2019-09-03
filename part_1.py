@@ -49,13 +49,21 @@ def createDocIDs(file_names):
 
     docids_file.write(docids_mapping)
 
+def appendTermId(term, id):
+    docids_file = open(config.TERMID_FILE, "a")
+    docids_file.write(str(id) + '\t' + term + '\n')
+
+def saveAllTokens(words):
+    id = 1
+    for word in words:
+        appendTermId(word, id)
+        id = id+1
+
 def processFiles(dir):
     #read file names
     file_names = [file for file in listdir(dir) if isfile(join(dir, file))]
     print("Total Files: " + str(len(file_names)))
-
     createDocIDs(file_names)
-
     for file_name in file_names:
         file_pointer = open(config.CORPUS_DIR + file_name, "r")
         file_html = file_pointer.read()
@@ -65,10 +73,9 @@ def processFiles(dir):
         tokens = list(dict.fromkeys(tokens))
         tokens = stopwording(tokens)
         words = stemming(tokens)
-        print(words)
+        saveAllTokens(words)
         file_pointer.close()
         break
-
 
 print("getting files from " + config.CORPUS_DIR)
 processFiles(config.CORPUS_DIR)
