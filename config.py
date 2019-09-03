@@ -1,1 +1,1 @@
-DIR = '../corpus'
+DIR = '../corpus/'
