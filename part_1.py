@@ -39,12 +39,25 @@ def stemming(words):
     words = list(dict.fromkeys(words)) #remove duplicates
     return words
 
+def createDocIDs(file_names):
+    id = 1
+    docids_file = open(config.DOCID_FILE, "w+")
+    docids_mapping = ""
+    for file_name in file_names:
+        docids_mapping = docids_mapping + str(id) + "\t" + file_name + "\n"
+        id = id + 1
+
+    docids_file.write(docids_mapping)
+
 def processFiles(dir):
     #read file names
-    file_names = [dir+file for file in listdir(dir) if isfile(join(dir, file))]
+    file_names = [file for file in listdir(dir) if isfile(join(dir, file))]
     print("Total Files: " + str(len(file_names)))
+
+    createDocIDs(file_names)
+
     for file_name in file_names:
-        file_pointer = open(file_name, "r")
+        file_pointer = open(config.CORPUS_DIR + file_name, "r")
         file_html = file_pointer.read()
         parseHtml(file_html)
         file_text = parseHtml(file_html)
