@@ -19,7 +19,19 @@ def parseHtml(file_html):
 
 def tokenize(text):
     file_text = text.lower()
-    return re.split("[ .,!?:;'\n\"\-]+", file_text)
+    return re.split("[ .,!?:;'\n\"\-—()\[\]]+", file_text)
+
+def stopwording(tokens):
+    stop_file = open(config.STOPLIST_FILE, "r")
+    stop_file_data = stop_file.read()
+    stop_words = re.split("[ \n]+", stop_file_data.lower())
+    print(stop_words)
+    for stop_word in stop_words:
+        if stop_word in tokens:
+            print("removing " + stop_word)
+            tokens.remove(stop_word)
+    stop_file.close()
+    return tokens
 
 def processFiles(dir):
     #read file names
@@ -30,9 +42,10 @@ def processFiles(dir):
         file_html = file_pointer.read()
         parseHtml(file_html)
         file_text = parseHtml(file_html)
-
         tokens = tokenize(file_text)
-
+        tokens = list(dict.fromkeys(tokens))
+        print(tokens)
+        tokens = stopwording(tokens)
         print(tokens)
         file_pointer.close()
         break
