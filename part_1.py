@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from os import listdir
 from os.path import isfile, join
 import re
+from nltk.stem import PorterStemmer
 
 def parseHtml(file_html):
     file_html = '<!DOCTYPE html' + file_html.split('<!DOCTYPE html', 1)[1]  # skipping all info before html starts
@@ -25,13 +26,18 @@ def stopwording(tokens):
     stop_file = open(config.STOPLIST_FILE, "r")
     stop_file_data = stop_file.read()
     stop_words = re.split("[ \n]+", stop_file_data.lower())
-    print(stop_words)
     for stop_word in stop_words:
         if stop_word in tokens:
-            print("removing " + stop_word)
             tokens.remove(stop_word)
     stop_file.close()
     return tokens
+
+def stemming(words):
+    ps = PorterStemmer()
+    for i in range(0, len(words)):
+        words[i] = ps.stem(words[i])
+    words = list(dict.fromkeys(words)) #remove duplicates
+    return words
 
 def processFiles(dir):
     #read file names
@@ -44,9 +50,9 @@ def processFiles(dir):
         file_text = parseHtml(file_html)
         tokens = tokenize(file_text)
         tokens = list(dict.fromkeys(tokens))
-        print(tokens)
         tokens = stopwording(tokens)
-        print(tokens)
+        words = stemming(tokens)
+        print(words)
         file_pointer.close()
         break
 
