@@ -6,9 +6,11 @@ import re
 from nltk.stem import PorterStemmer
 
 def parseHtml(file_html):
-    file_html = '<!DOCTYPE html' + file_html.split('<!DOCTYPE html', 1)[1]  # skipping all info before html starts
+    if file_html.find('<!DOCTYPE html') != -1:
+        file_html = '<!DOCTYPE html' + file_html.split('<!DOCTYPE html', 1)[1]  # skipping all info before html starts
 
-    file_soup = BeautifulSoup(file_html)
+    file_soup = BeautifulSoup(file_html, features="html.parser")
+
     # kill all script and style elements
     for script in file_soup(["script", "style"]):
         script.extract()
@@ -50,22 +52,23 @@ def createDocIDs(file_names):
     docids_file.write(docids_mapping)
 
 def appendTermId(term, id):
-    docids_file = open(config.TERMID_FILE, "a")
+    docids_file = open(config.TERMID_FILE, "a", encoding="utf-8")
     docids_file.write(str(id) + '\t' + term + '\n')
 
-def saveAllTokens(words):
-    id = 1
+def saveAllTokens(words, id):
     for word in words:
         appendTermId(word, id)
         id = id+1
+    return id
 
 def processFiles(dir):
     #read file names
     file_names = [file for file in listdir(dir) if isfile(join(dir, file))]
     print("Total Files: " + str(len(file_names)))
     createDocIDs(file_names)
+    term_id = 1
     for file_name in file_names:
-        file_pointer = open(config.CORPUS_DIR + file_name, "r")
+        file_pointer = open(config.CORPUS_DIR + file_name, "r", encoding="utf8")
         file_html = file_pointer.read()
         parseHtml(file_html)
         file_text = parseHtml(file_html)
@@ -73,9 +76,8 @@ def processFiles(dir):
         tokens = list(dict.fromkeys(tokens))
         tokens = stopwording(tokens)
         words = stemming(tokens)
-        saveAllTokens(words)
+        term_id = saveAllTokens(words, term_id)
         file_pointer.close()
-        break
 
 print("getting files from " + config.CORPUS_DIR)
 processFiles(config.CORPUS_DIR)
