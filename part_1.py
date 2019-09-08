@@ -22,7 +22,7 @@ def parseHtml(file_html):
 
 def tokenize(text):
     file_text = text.lower()
-    return re.split("[ .,!?:;'\n\"\-—–()*’”%+@#»<>{}/\[\]]+", file_text)
+    return re.split("[ .,!?:;'\n\"\-—–_=^()*‘’”“%+@#»<>\t…{}→\\\\/\[\]]+", file_text)
 
 def stopwording(tokens):
     stop_file = open(config.STOPLIST_FILE, "r")
@@ -55,6 +55,7 @@ def saveTermIds(terms):
     docids_file = open(config.TERMID_FILE, "w", encoding="utf-8", errors='ignore')
     id = 1
     for term in terms:
+        term.strip()
         docids_file.write(str(id) + '\t' + term + '\n')
         id += 1
 
