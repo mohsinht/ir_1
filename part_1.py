@@ -22,7 +22,7 @@ def parseHtml(file_html):
 
 def tokenize(text):
     file_text = text.lower()
-    return re.split("[ .,!?:;'\n\"\-—()\[\]]+", file_text)
+    return re.split("[ .,!?:;'\n\"\-—–()*’”%+@#»<>{}/\[\]]+", file_text)
 
 def stopwording(tokens):
     stop_file = open(config.STOPLIST_FILE, "r")
@@ -51,15 +51,26 @@ def createDocIDs(file_names):
 
     docids_file.write(docids_mapping)
 
-def appendTermId(term, id):
-    docids_file = open(config.TERMID_FILE, "a", encoding="utf-8")
-    docids_file.write(str(id) + '\t' + term + '\n')
+def saveTermIds(terms):
+    docids_file = open(config.TERMID_FILE, "w", encoding="utf-8", errors='ignore')
+    id = 1
+    for term in terms:
+        docids_file.write(str(id) + '\t' + term + '\n')
+        id += 1
 
-def saveAllTokens(words, id):
+
+def saveTerms(words, terms_arr):
     for word in words:
-        appendTermId(word, id)
-        id = id+1
-    return id
+        if word in terms_arr:
+            continue
+        else:
+            terms_arr.append(word)
+    return terms_arr
+
+def printLoader(i, total_size):
+    i = i+5
+    if (round(i/total_size * 100, 2)).is_integer():
+        print(str(round(i/total_size * 100, 2)), "percent complete (" + str(i) + " files)" )
 
 def processFiles(dir):
     #read file names
@@ -67,8 +78,12 @@ def processFiles(dir):
     print("Total Files: " + str(len(file_names)))
     createDocIDs(file_names)
     term_id = 1
+    terms_arr = []
+    file_count = 0
     for file_name in file_names:
-        file_pointer = open(config.CORPUS_DIR + file_name, "r", encoding="utf8")
+        file_count += 1
+        printLoader(file_count, len(file_names))
+        file_pointer = open(config.CORPUS_DIR + file_name, "r", encoding="utf8", errors='ignore')
         file_html = file_pointer.read()
         parseHtml(file_html)
         file_text = parseHtml(file_html)
@@ -76,8 +91,10 @@ def processFiles(dir):
         tokens = list(dict.fromkeys(tokens))
         tokens = stopwording(tokens)
         words = stemming(tokens)
-        term_id = saveAllTokens(words, term_id)
+        #term_id = saveAllTokens(words, term_id)
+        terms_arr = saveTerms(words, terms_arr)
         file_pointer.close()
+    saveTermIds(terms_arr)
 
 print("getting files from " + config.CORPUS_DIR)
 processFiles(config.CORPUS_DIR)
