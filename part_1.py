@@ -93,7 +93,7 @@ def processFiles(dir):
         printLoader(file_count, len(file_names))
         file_pointer = open(config.CORPUS_DIR + file_name, "r", encoding="utf8", errors='ignore')
         file_html = file_pointer.read()
-        parseHtml(file_html)
+        #parseHtml(file_html)
         file_text = parseHtml(file_html)
         tokens = tokenize(file_text)
         tokens = list(dict.fromkeys(tokens))

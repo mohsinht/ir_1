@@ -52,9 +52,58 @@ def readTermIds(termids_file):
     return terms
 
 
+def parseHtml(file_html):
+    if file_html.find('<!DOCTYPE html') != -1:
+        file_html = '<!DOCTYPE html' + file_html.split('<!DOCTYPE html', 1)[1]  # skipping all info before html starts
+
+    file_soup = BeautifulSoup(file_html, features="html.parser")
+
+    # kill all script and style elements
+    for script in file_soup(["script", "style"]):
+        script.extract()
+    file_text = file_soup.get_text(separator=' ')
+    lines = (line.strip() for line in file_text.splitlines())
+    chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+    file_text = '\n'.join(chunk for chunk in chunks if chunk)
+    return file_text
+
+
+def tokenize(text):
+    file_text = text.lower()
+    return re.split("[ .,!?:;'\n\"\-—–_=^()*‘’”“%+@#»<>\t…{}→\\\\/\[\]]+", file_text)
+
+
+def stopwording(tokens):
+    stop_file = open(config.STOPLIST_FILE, "r")
+    stop_file_data = stop_file.read()
+    stop_words = re.split("[ \n]+", stop_file_data.lower())
+    for stop_word in stop_words:
+        while stop_word in tokens:
+            tokens.remove(stop_word)
+    stop_file.close()
+    return tokens
+
+
+def stemming(words):
+    ps = PorterStemmer()
+    for i in range(0, len(words)):
+        words[i] = ps.stem(words[i])
+    return words
+
+
 def invertedIndex():
     documents = readDocIds(config.DOCID_FILE)
     terms = readTermIds(config.TERMID_FILE)
+    for doc in documents:
+        file_pointer = open(config.CORPUS_DIR + doc.value, "r", encoding="utf8", errors='ignore')
+        file_html = file_pointer.read()
+        file_text = parseHtml(file_html)
+        tokens = tokenize(file_text)
+        tokens = stopwording(tokens)
+        words = stemming(tokens)
+        print(words)
+        break
+
 
 
 invertedIndex()
