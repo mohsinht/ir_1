@@ -20,9 +20,11 @@ def parseHtml(file_html):
     file_text = '\n'.join(chunk for chunk in chunks if chunk)
     return file_text
 
+
 def tokenize(text):
     file_text = text.lower()
     return re.split("[ .,!?:;'\n\"\-—–_=^()*‘’”“%+@#»<>\t…{}→\\\\/\[\]]+", file_text)
+
 
 def stopwording(tokens):
     stop_file = open(config.STOPLIST_FILE, "r")
@@ -34,12 +36,14 @@ def stopwording(tokens):
     stop_file.close()
     return tokens
 
+
 def stemming(words):
     ps = PorterStemmer()
     for i in range(0, len(words)):
         words[i] = ps.stem(words[i])
     words = list(dict.fromkeys(words)) #remove duplicates
     return words
+
 
 def createDocIDs(file_names):
     id = 1
@@ -50,6 +54,7 @@ def createDocIDs(file_names):
         id = id + 1
 
     docids_file.write(docids_mapping)
+
 
 def saveTermIds(terms):
     docids_file = open(config.TERMID_FILE, "w", encoding="utf-8", errors='ignore')
@@ -68,10 +73,12 @@ def saveTerms(words, terms_arr):
             terms_arr.append(word)
     return terms_arr
 
+
 def printLoader(i, total_size):
     i = i+5
     if (round(i/total_size * 100, 2)).is_integer():
         print(str(round(i/total_size * 100, 2)), "percent complete (" + str(i) + " files)" )
+
 
 def processFiles(dir):
     #read file names
@@ -96,6 +103,7 @@ def processFiles(dir):
         terms_arr = saveTerms(words, terms_arr)
         file_pointer.close()
     saveTermIds(terms_arr)
+
 
 print("getting files from " + config.CORPUS_DIR)
 processFiles(config.CORPUS_DIR)
