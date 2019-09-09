@@ -17,15 +17,30 @@ class Term:
     id = 0
     value = "null"
     docids = []
-    positons = []
+    positions = []
     totalCount = 0
+    docFreq = 0
     def __init__(self, id, value):
         self.id = id
         self.value = value
+        self.docids = []
+        self.positions = []
+
     def add(self, docid, position):
+        if docid not in self.docids:
+            self.docFreq += 1
         self.docids.append(docid)
-        self.positons.append(position)
+        self.positions.append(position)
         self.totalCount += 1
+
+
+    def getStats(self):
+        stats = str(self.id) + " " + str(self.totalCount) + " " + str(self.docFreq)
+        i = 0
+        for docId in self.docids:
+            stats += " " + str(docId) + "," + str(self.positions[i])
+            i += 1
+        return stats
 
 
 def readDocIds(docids_file):
@@ -91,9 +106,17 @@ def stemming(words):
     return words
 
 
+def saveDocInTerm(term_value, terms_array, doc_id, doc_pos):
+    # linear search to find the term id.
+    for term in terms_array:
+        if term_value == term.value:
+            term.add(doc_id, doc_pos)
+
+
 def invertedIndex():
     documents = readDocIds(config.DOCID_FILE)
     terms = readTermIds(config.TERMID_FILE)
+    count = 1
     for doc in documents:
         file_pointer = open(config.CORPUS_DIR + doc.value, "r", encoding="utf8", errors='ignore')
         file_html = file_pointer.read()
@@ -101,9 +124,16 @@ def invertedIndex():
         tokens = tokenize(file_text)
         tokens = stopwording(tokens)
         words = stemming(tokens)
-        print(words)
-        break
-
+        position_count = 1
+        for word in words:
+            saveDocInTerm(word, terms, doc.id, position_count)
+            position_count += 1
+        count += 1
+        if count > 10:
+            break
+    for term in terms:
+        if len(term.docids) > 0:
+            print(term.getStats())
 
 
 invertedIndex()
