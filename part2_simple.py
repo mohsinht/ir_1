@@ -20,6 +20,7 @@ class Term:
     positions = []
     totalCount = 0
     docFreq = 0
+
     def __init__(self, id, value):
         self.id = id
         self.value = value
@@ -32,7 +33,6 @@ class Term:
         self.docids.append(docid)
         self.positions.append(position)
         self.totalCount += 1
-
 
     def getStats(self):
         stats = str(self.id) + " " + str(self.totalCount) + " " + str(self.docFreq)
@@ -113,6 +113,32 @@ def saveDocInTerm(term_value, terms_array, doc_id, doc_pos):
             term.add(doc_id, doc_pos)
 
 
+def deltaEncoding(terms_array):
+    for term in terms_array:
+        if len(term.docids) < 1:
+            continue
+        i = 1
+        last_docid = term.docids[0]
+        last_position = term.positions[0]
+        for docid in term.docids:
+            if i >= len(term.docids):
+                break
+            if term.docids[i] != last_docid:
+                last_position = term.positions[i]
+            else:
+                term.positions[i] = term.positions[i] - last_position
+                last_position = last_position + term.positions[i]
+            term.docids[i] = term.docids[i] - last_docid
+            last_docid = last_docid + term.docids[i]
+            i = i + 1
+
+
+def saveIndex(terms):
+    termindex_file = open(config.TERM_INDEX_FILE, "w", encoding="utf-8", errors='ignore')
+    for term in terms:
+        termindex_file.write(term.getStats() + '\n')
+
+
 def invertedIndex():
     documents = readDocIds(config.DOCID_FILE)
     terms = readTermIds(config.TERMID_FILE)
@@ -131,9 +157,15 @@ def invertedIndex():
         count += 1
         if count > 10:
             break
-    for term in terms:
-        if len(term.docids) > 0:
-            print(term.getStats())
+        print("files done: " + str(count-1))
+
+    deltaEncoding(terms)
+    saveIndex(terms)
+    # for term in terms:
+    #     #     if len(term.docids) > 0:
+    #     #         print(term.getStats())
+
+
 
 
 invertedIndex()
