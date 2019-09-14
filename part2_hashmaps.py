@@ -67,30 +67,47 @@ def stemming(words):
     return words
 
 
-def deltaEncoding(terms_dict):
-    for term in terms_dict:
-        if len() < 1:
-            continue
-        i = 1
-        last_docid = term.docids[0]
-        last_position = term.positions[0]
-        for docid in term.docids:
-            if i >= len(term.docids):
-                break
-            if term.docids[i] != last_docid:
-                last_position = term.positions[i]
-            else:
-                term.positions[i] = term.positions[i] - last_position
-                last_position = last_position + term.positions[i]
-            term.docids[i] = term.docids[i] - last_docid
-            last_docid = last_docid + term.docids[i]
-            i = i + 1
+def deltaEncoding(index):
+    retval = ""
+    for ind in index:
+        if len(index[ind]) > 0:
+            total_occ = 0
+            output = ""
+            doc_ids = []
+            i = 0
+            for doc in index[ind]:
+                j = 0
+                for pos in index[ind][doc]:
+                    if j == 0:
+                        last_position = pos
+                        index[ind][doc][j] = last_position
+                    else:
+                        index[ind][doc][j] = index[ind][doc][j] - last_position
+                        last_position = last_position + index[ind][doc][j]
+                    doc_ids.append(doc)
+                    total_occ+=1
+                    if (i == 0):
+                        last_docid = doc_ids[i]
+                        doc_ids[i] = last_docid
+                    else:
+                        doc_ids[i] = doc_ids[i] - last_docid
+                        last_docid = last_docid + doc_ids[i]
+                    output += " " + str(doc_ids[i]) + "," + str(index[ind][doc][j])
+                    j += 1
+                    i += 1
+
+            retval += str(ind) + " " + str(total_occ) + " " + str(len(index[ind])) + output + "\n"
+
+    return retval
+
+#   10  18  25  25  29  35  39
+#   10  8   7   0   4   6   4
 
 
-def saveIndex(terms):
+
+def saveIndex(output):
     termindex_file = open(config.TERM_INDEX_FILE, "w", encoding="utf-8", errors='ignore')
-    for term in terms:
-        termindex_file.write(term.getStats() + '\n')
+    termindex_file.write(output)
 
 
 def invertedIndex():
@@ -128,24 +145,8 @@ def invertedIndex():
             break
         print("files done: " + str(count-1))
 
-    for ind in index:
-        if len(index[ind]) > 0:
-            total_occ = 0
-            output = ""
-            for doc in index[ind]:
-                for pos in index[ind][doc]:
-                    output += " " + str(doc) + "," + str(pos)
-                    total_occ+=1
-
-            print(str(ind) + " " + str(total_occ) + " " + str(len(index[ind])) + output)
-
-    #deltaEncoding(index, terms, documents)
-    # saveIndex(terms)
-    # for term in terms:
-    #     #     if len(term.docids) > 0:
-    #     #         print(term.getStats())
-
-
-
+    output = deltaEncoding(index)
+    saveIndex(output)
+    print(output)
 
 invertedIndex()
