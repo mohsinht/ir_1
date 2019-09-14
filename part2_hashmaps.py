@@ -25,6 +25,7 @@ def readTermIds(termids_file):
         if len(line) > 1:
             arr = line.split('\t')
             terms[arr[1]] = int(arr[0]) # <TERM, TERM_ID>
+
     return terms
 
 
@@ -132,17 +133,18 @@ def invertedIndex():
         doc_index = dict()
         doc_id = documents[doc]
         for word in words:
-            term_id = terms[word]
             try:
+                term_id = terms[word]
                 index[term_id][doc_id].append(position_count)
             except:
+                temp_word = str(word)
+                term_id = terms[temp_word]
                 index[term_id][doc_id] = []
                 index[term_id][doc_id].append(position_count)
-
             position_count += 1
-        count += 1
-        if count > 10:
+        if count > 100:
             break
+        count += 1
         print("files done: " + str(count-1))
 
     output = deltaEncoding(index)

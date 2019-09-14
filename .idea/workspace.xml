@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b16050c-d872-42ed-968c-0f712d1d4546" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/part2_hashmaps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aiwen.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/part3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part2_simple.py" beforeDir="false" afterPath="$PROJECT_DIR$/part2_simple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part2_hashmaps.py" beforeDir="false" afterPath="$PROJECT_DIR$/part2_hashmaps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/term_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/term_index.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/termids.txt" beforeDir="false" afterPath="$PROJECT_DIR$/termids.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,17 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part2_simple.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-493">
-              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/part2_hashmaps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+            <state relative-caret-position="-765">
+              <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -57,10 +51,52 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/part2_hashmaps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/part3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="92" column="60" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/term_index.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+            <state relative-caret-position="-255">
+              <caret column="8" selection-start-column="6" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aiwen.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3145">
+              <caret line="185" selection-start-line="185" selection-end-line="194" selection-end-column="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/termids.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64090">
+              <caret line="3839" column="11" lean-forward="true" selection-start-line="3839" selection-start-column="11" selection-end-line="3839" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -73,7 +109,11 @@
       <find>\</find>
       <find></find>
       <find>the</find>
+      <find>brows</find>
+      <find>d1c</find>
       <find>len(</find>
+      <find>3840</find>
+      <find>s</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -84,11 +124,13 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/part_1.py" />
-        <option value="$PROJECT_DIR$/termids.txt" />
         <option value="$PROJECT_DIR$/term_index.txt" />
         <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/termids.txt" />
         <option value="$PROJECT_DIR$/part2_simple.py" />
         <option value="$PROJECT_DIR$/part2_hashmaps.py" />
+        <option value="$PROJECT_DIR$/aiwen.txt" />
+        <option value="$PROJECT_DIR$/part3.py" />
       </list>
     </option>
   </component>
@@ -314,7 +356,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568071857563</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="saving stats of terms in part 2 (simple)">
+      <created>1568494358666</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1568494358666</updated>
+    </task>
+    <task id="LOCAL-00015" summary="part 2 completed with hashmaps">
+      <created>1568498141381</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1568498141382</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -354,7 +410,8 @@
     <MESSAGE value="reading term_ids in part 2 (simple)" />
     <MESSAGE value="parsing html again in part 2 (simple)" />
     <MESSAGE value="saving stats of terms in part 2 (simple)" />
-    <option name="LAST_COMMIT_MESSAGE" value="saving stats of terms in part 2 (simple)" />
+    <MESSAGE value="part 2 completed with hashmaps" />
+    <option name="LAST_COMMIT_MESSAGE" value="part 2 completed with hashmaps" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -371,13 +428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="59415">
           <caret line="3495" lean-forward="true" selection-start-line="3495" selection-end-line="3495" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/termids.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="54883" column="26" lean-forward="true" selection-start-line="54883" selection-start-column="26" selection-end-line="54883" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -398,26 +448,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/part2_simple.py">
+    <entry file="file://E:/dd/termids.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        <state relative-caret-position="-2924558">
+          <caret line="32" column="12" lean-forward="true" selection-end-line="172079" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/term_index.txt">
+    <entry file="file://$PROJECT_DIR$/part2_simple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="45" column="44" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="44" />
+        <state relative-caret-position="-765">
+          <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/part2_hashmaps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+        <state relative-caret-position="276">
+          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/term_index.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret column="8" selection-start-column="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aiwen.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3145">
+          <caret line="185" selection-start-line="185" selection-end-line="194" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/termids.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64090">
+          <caret line="3839" column="11" lean-forward="true" selection-start-line="3839" selection-start-column="11" selection-end-line="3839" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="92" column="60" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
