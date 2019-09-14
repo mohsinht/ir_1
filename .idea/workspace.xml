@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b16050c-d872-42ed-968c-0f712d1d4546" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aiwen.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/part3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/part2_hashmaps.py" beforeDir="false" afterPath="$PROJECT_DIR$/part2_hashmaps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/term_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/term_index.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/termids.txt" beforeDir="false" afterPath="$PROJECT_DIR$/termids.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/read_index.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="92" column="60" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-end-line="99" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -77,8 +72,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/term_index.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255">
-              <caret column="8" selection-start-column="6" selection-end-column="8" />
+            <state relative-caret-position="-519">
+              <caret line="3431" column="23" lean-forward="true" selection-start-line="3431" selection-start-column="23" selection-end-line="3431" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/read_index.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -131,6 +135,7 @@
         <option value="$PROJECT_DIR$/part2_hashmaps.py" />
         <option value="$PROJECT_DIR$/aiwen.txt" />
         <option value="$PROJECT_DIR$/part3.py" />
+        <option value="$PROJECT_DIR$/read_index.py" />
       </list>
     </option>
   </component>
@@ -370,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568498141382</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="part 3 also completed">
+      <created>1568502600244</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1568502600244</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -411,7 +423,8 @@
     <MESSAGE value="parsing html again in part 2 (simple)" />
     <MESSAGE value="saving stats of terms in part 2 (simple)" />
     <MESSAGE value="part 2 completed with hashmaps" />
-    <option name="LAST_COMMIT_MESSAGE" value="part 2 completed with hashmaps" />
+    <MESSAGE value="part 3 also completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="part 3 also completed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -475,13 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/term_index.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret column="8" selection-start-column="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aiwen.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3145">
@@ -496,13 +502,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/term_index.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-519">
+          <caret line="3431" column="23" lean-forward="true" selection-start-line="3431" selection-start-column="23" selection-end-line="3431" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/part3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="92" column="60" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-end-line="99" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read_index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
