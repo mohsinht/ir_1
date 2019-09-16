@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b16050c-d872-42ed-968c-0f712d1d4546" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/read_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part2_hashmaps.py" beforeDir="false" afterPath="$PROJECT_DIR$/part2_hashmaps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/term_index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/term_index.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +17,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
+            <state relative-caret-position="952">
               <caret line="61" selection-start-line="61" selection-end-line="63" selection-end-column="55" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -36,7 +38,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part2_simple.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-765">
+            <state relative-caret-position="1683">
               <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -48,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part2_hashmaps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+            <state relative-caret-position="293">
+              <caret line="147" column="24" lean-forward="true" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="24" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -60,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-end-line="99" />
+            <state relative-caret-position="17">
+              <caret line="4" selection-end-line="99" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -72,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/term_index.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-519">
-              <caret line="3431" column="23" lean-forward="true" selection-start-line="3431" selection-start-column="23" selection-end-line="3431" selection-end-column="23" />
+            <state relative-caret-position="357">
+              <caret line="90" column="4591" selection-start-line="90" selection-start-column="4591" selection-end-line="90" selection-end-column="4591" />
             </state>
           </provider>
         </entry>
@@ -81,8 +83,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/read_index.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            <state relative-caret-position="1309">
+              <caret line="77" column="19" lean-forward="true" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/termids.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64090">
-              <caret line="3839" column="11" lean-forward="true" selection-start-line="3839" selection-start-column="11" selection-end-line="3839" selection-end-column="11" />
+            <state relative-caret-position="350">
+              <caret line="3839" column="11" selection-start-line="3839" selection-start-column="11" selection-end-line="3839" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -111,7 +116,7 @@
     <findStrings>
       <find>append</find>
       <find>\</find>
-      <find></find>
+      <find />
       <find>the</find>
       <find>brows</find>
       <find>d1c</find>
@@ -132,18 +137,18 @@
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/termids.txt" />
         <option value="$PROJECT_DIR$/part2_simple.py" />
-        <option value="$PROJECT_DIR$/part2_hashmaps.py" />
         <option value="$PROJECT_DIR$/aiwen.txt" />
         <option value="$PROJECT_DIR$/part3.py" />
         <option value="$PROJECT_DIR$/read_index.py" />
+        <option value="$PROJECT_DIR$/part2_hashmaps.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1358" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -151,7 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,6 +167,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -187,7 +192,7 @@
     </option>
     <option name="contentProportion" value="0.09726444" />
   </component>
-  <component name="RunManager" selected="Python.part2_hashmaps">
+  <component name="RunManager" selected="Python.part3">
     <configuration name="part2_hashmaps" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="l164333" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -230,6 +235,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="part3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="l164333" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/part3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="part_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="l164333" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -253,6 +279,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.part3" />
         <item itemvalue="Python.part2_hashmaps" />
         <item itemvalue="Python.part2_simple" />
         <item itemvalue="Python.part_1" />
@@ -382,14 +409,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568502600244</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="all assignment completed">
+      <created>1568502678062</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1568502678062</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19074778" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22395833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -399,9 +433,9 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="7" visible="true" weight="0.44952893" />
+      <window_info anchor="bottom" id="Run Dashboard" order="7" weight="0.44952893" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.400982" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -424,7 +458,8 @@
     <MESSAGE value="saving stats of terms in part 2 (simple)" />
     <MESSAGE value="part 2 completed with hashmaps" />
     <MESSAGE value="part 3 also completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="part 3 also completed" />
+    <MESSAGE value="all assignment completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="all assignment completed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -444,23 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="61" selection-start-line="61" selection-end-line="63" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/dd/termids.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2924558">
@@ -468,9 +486,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/part_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="61" selection-start-line="61" selection-end-line="63" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/part2_simple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765">
+        <state relative-caret-position="1683">
           <caret line="102" column="36" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -478,12 +513,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/part2_hashmaps.py">
+    <entry file="file://$PROJECT_DIR$/part3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
+        <state relative-caret-position="17">
+          <caret line="4" selection-end-line="99" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -495,34 +530,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/part2_hashmaps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="147" column="24" lean-forward="true" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/termids.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64090">
-          <caret line="3839" column="11" lean-forward="true" selection-start-line="3839" selection-start-column="11" selection-end-line="3839" selection-end-column="11" />
+        <state relative-caret-position="350">
+          <caret line="3839" column="11" selection-start-line="3839" selection-start-column="11" selection-end-line="3839" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/term_index.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-519">
-          <caret line="3431" column="23" lean-forward="true" selection-start-line="3431" selection-start-column="23" selection-end-line="3431" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-end-line="99" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="90" column="4591" selection-start-line="90" selection-start-column="4591" selection-end-line="90" selection-end-column="4591" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/read_index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        <state relative-caret-position="1309">
+          <caret line="77" column="19" lean-forward="true" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

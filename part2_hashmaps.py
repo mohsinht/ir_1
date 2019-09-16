@@ -137,12 +137,15 @@ def invertedIndex():
                 term_id = terms[word]
                 index[term_id][doc_id].append(position_count)
             except:
-                temp_word = str(word)
-                term_id = terms[temp_word]
-                index[term_id][doc_id] = []
-                index[term_id][doc_id].append(position_count)
+                try:
+                    temp_word = str(word)
+                    term_id = terms[temp_word]
+                    index[term_id][doc_id] = []
+                    index[term_id][doc_id].append(position_count)
+                except:
+                    continue
             position_count += 1
-        if count > 100:
+        if count > 3000:
             break
         count += 1
         print("files done: " + str(count-1))
