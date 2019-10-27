@@ -30,7 +30,7 @@ def readTermIndex():
     file_pointer = open(config.TERM_INDEX_FILE, "r", encoding="utf8", errors='ignore')
     file_data = file_pointer.read()
     file_lines = file_data.split('\n')
-    index = dict()
+    index = dict() # index = <>
     for line in file_lines:
         arr = line.split(' ')
         if len(arr[0]) < 1:
@@ -40,18 +40,17 @@ def readTermIndex():
         firstDocId = True
         totalId = 0
         positions = []
-        index[term_id] = dict()
+        index[term_id] = dict() # index = <term_id, <>>
         for part in arr:
-            if i > 2:
-                doc_pos = part.split(',')
-                if firstDocId:
+            if i > 2: # skipping the first 3 numbers which are term_id, count_in_corpus, document_count
+                doc_pos = part.split(',') # split doc_id and position
+                if firstDocId: # no decoding is needed in first doc_id
                     try:
-                        index[term_id][int(doc_pos[0])].append(int(doc_pos[1]))
+                        index[term_id][int(doc_pos[0])].append(int(doc_pos[1])) # index = <term_id, <doc_id, positions[]>>
                     except:
                         index[term_id][int(doc_pos[0])] = []
                         index[term_id][int(doc_pos[0])].append(int(doc_pos[1]))
-
-                    totalId = int(doc_pos[1])
+                    totalId = int(doc_pos[0])
                     firstDocId = False
                 else:
                     totalId += int(doc_pos[0])
