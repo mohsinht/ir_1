@@ -18,19 +18,20 @@ def main():
     print("avg: " + str(avg_doc_length))
     print("total length: " + str(total_length))
 
-    bm25_score = okapi_bm25(topics, terms, index, docs_length, avg_doc_length, total_length)
+    # bm25_score = okapi_bm25(topics, terms, index, docs_length, avg_doc_length)
+    ds_score = dirichlet_smoothing(topics, terms, index, docs_length, avg_doc_length, total_length)
 
     query_count = 0
     for q in topics:
         print(topics[q])
         for j in range(0, len(docs_length)):
-            if bm25_score[query_count][j] > 0:
-                print("DOC: " + str(j) + "; Score: " + str(bm25_score[query_count][j]))
+            if ds_score[query_count][j] > 0:
+                print("DOC: " + str(j) + "; Score: " + str(ds_score[query_count][j]))
 
         query_count+=1
 
 
-def okapi_bm25(topics, terms, index, docs_length, avg_doc_length, total_length):
+def okapi_bm25(topics, terms, index, docs_length, avg_doc_length):
     print("calculating relevance score using BM25...")
     doc_score = [0]*len(topics)
     print("len: " + str(len(docs_length)))
@@ -67,6 +68,43 @@ def okapi_bm25(topics, terms, index, docs_length, avg_doc_length, total_length):
     return doc_score
 
 
+def dirichlet_smoothing(topics, terms, index, docs_length, avg_doc_length, total_length):
+    print("calculating relevance score using Dirichlet Smoothing...")
+    doc_score = [1]*len(topics)
+    print("len: " + str(len(docs_length)))
+    for i in range(0, len(topics)):
+        doc_score[i] = [1]*len(docs_length)
+
+    for dl in range(0, len(docs_length)): # for every document in corpus
+        query_count = 0
+        for q in topics: # for every query 'q' in topics
+            for i in topics[q]: # for every word 'i' in the query
+                term_id = terms[i]
+                res = index[term_id]
+                term_count_in_doc = calc_term_freq_doc(dl+1, i)
+                
+                N = docs_length[dl]
+                meu = avg_doc_length
+                term_count_in_collection = calc_term_freq_col(res)
+
+                # prob of i:
+
+                probDOC = (term_count_in_doc)/docs_length[dl]
+                probCOL = (term_count_in_collection)/total_length
+                prob = (N/(N+meu))*probDOC + (meu/(N+meu))*probCOL
+                doc_score[query_count][dl] *= prob
+
+            query_count += 1
+
+    print("calculating relevance score using Dirichlet Smoothing: COMPLETE")
+    return doc_score
+
+
+def calc_term_freq_col(res):
+    count = 0
+    for doc in res:
+        count += len(res[doc])
+    return count
 
 
 def calc_term_freq_doc(doc_id, res):
@@ -77,7 +115,11 @@ def calc_term_freq_doc(doc_id, res):
 
 
 def calc_term_freq_query(query, word):
-    return query.count(word)
+    count = 0
+    for i in query:
+        if i == word:
+            count+=1
+    return count
 
 def read_topic_file():
     print("Reading topics.xml file...")
@@ -213,7 +255,7 @@ def count_words_in_all_docs(index):
             total_length += len(index[term_id][doc_id])
 
     avg_doc_length = (total_length/len(docs_length))
-
+    print("counting words in doc: COMPLETE!")
     return docs_length, avg_doc_length, total_length
 
 main()
