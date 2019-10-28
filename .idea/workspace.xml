@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -39,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/topics.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
+            <state relative-caret-position="633">
               <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
             </state>
           </provider>
@@ -48,22 +48,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/part2_hashmaps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2584">
-              <caret line="155" selection-start-line="155" selection-end-line="155" />
+            <state relative-caret-position="208">
+              <caret line="130" column="32" lean-forward="true" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/part3.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,11 +60,30 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/evaluation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="102" column="36" lean-forward="true" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+            <state relative-caret-position="311">
+              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#943#2075#0" />
+                <element signature="e#2256#2575#0" />
+                <element signature="e#3066#3143#0" />
+                <element signature="e#1611#1754#0" />
+                <element signature="e#3131#3184#0" />
+                <element signature="e#2419#2529#0" />
+                <element signature="e#2561#2847#0" />
+                <element signature="e#2875#2984#0" />
+                <element signature="e#3024#3201#0" />
+                <element signature="e#3234#3283#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/corpus.qrel">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-34">
+              <caret line="250" column="6" selection-start-line="250" selection-start-column="6" selection-end-line="250" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -84,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docids.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59415">
-              <caret line="3495" selection-start-line="3495" selection-end-line="3495" />
+            <state relative-caret-position="140">
+              <caret line="379" column="29" selection-start-line="379" selection-start-column="4" selection-end-line="379" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -466,7 +473,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="7" visible="true" weight="0.4037685" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="7" visible="true" weight="0.35666218" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32974428" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -529,11 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/corpus.qrel">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/term_index.txt">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -556,47 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/topics.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part2_hashmaps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="155" selection-start-line="155" selection-end-line="155" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/part3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docids.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59415">
-          <caret line="3495" selection-start-line="3495" selection-end-line="3495" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/read_index.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -614,12 +575,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/evaluation.py">
+    <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="102" column="36" lean-forward="true" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topics.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docids.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="379" column="29" selection-start-line="379" selection-start-column="4" selection-end-line="379" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/corpus.qrel">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="250" column="6" selection-start-line="250" selection-start-column="6" selection-end-line="250" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/part2_hashmaps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="130" column="32" lean-forward="true" selection-start-line="130" selection-start-column="32" selection-end-line="130" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/evaluation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#943#2075#0" />
+            <element signature="e#2256#2575#0" />
+            <element signature="e#3066#3143#0" />
+            <element signature="e#1611#1754#0" />
+            <element signature="e#3131#3184#0" />
+            <element signature="e#2419#2529#0" />
+            <element signature="e#2561#2847#0" />
+            <element signature="e#2875#2984#0" />
+            <element signature="e#3024#3201#0" />
+            <element signature="e#3234#3283#0" />
           </folding>
         </state>
       </provider>

@@ -14,7 +14,9 @@ def main():
     # print_topics(topics)
     terms = readTermIds(config.TERMID_FILE)
     index = readTermIndex()
+    doc_ids = readDocIds(config.DOCID_FILE)
     docs_length, avg_doc_length, total_length = count_words_in_all_docs(index)
+
 
     print("avg: " + str(avg_doc_length))
     print("total length: " + str(total_length))
@@ -31,12 +33,12 @@ def main():
         ds_score_sorted[i] = numpy.argsort(ds_score[i], -1) # argsort sorts in ascending order
         ds_score_sorted[i] = ds_score_sorted[i][::-1] # reverse
 
-    for i in range(0, len(topics)):
-        for j in ds_score_sorted[i]:
-            print("DOC: " + str(j+1) + "; Score: " + str(ds_score[i][j]))
-        break
+    # for i in range(0, len(topics)):
+    #     for j in ds_score_sorted[i]:
+    #         print("DOC: " + str(j+1) + "; Score: " + str(ds_score[i][j]))
+    #     break
 
-
+    evaluate_score(ds_score, ds_score_sorted, doc_ids, topics)
     # query_count = 0
     # for q in topics:
     #     print(topics[q])
@@ -117,6 +119,80 @@ def dirichlet_smoothing(topics, terms, index, docs_length, avg_doc_length, total
     return doc_score
 
 
+def evaluate_score(score, score_sorted, doc_ids, topics):
+    print("Evaluating relevance score...")
+
+    # read corpus query relevance judgement file
+    file_pointer = open(config.CORPUS_GRADES_FILE, "r", encoding="utf8", errors='ignore')
+    file_data = file_pointer.read()
+    file_lines = file_data.split('\n')
+
+    rel_score = dict()
+
+    for t in topics:
+        rel_score[t] = dict()
+
+    for line in file_lines:
+        if len(line) > 1:
+            arr = line.split(' ')
+            query_number = arr[0]
+            document_name = arr[2]
+            relevency_score = arr[3]
+            doc_id = doc_ids[document_name]
+            rel_score[query_number][doc_id] = int(relevency_score)
+            print("doc_id: " + str(doc_id) + "; query_number" + str(arr[0]) + "; score: " + str(rel_score[query_number][doc_id]))
+
+    # reading done
+
+    # PM@5:
+    pm5 = dict()
+    i = 0
+    for q in topics:
+        total_relevant_docs_retrieved = 0
+        total_documents_retrieved = 0
+        for j in score_sorted[i]:
+            total_documents_retrieved += 1
+            try:
+                if rel_score[q][j+1] > 0:
+                    total_relevant_docs_retrieved+=1
+            except:
+                total_relevant_docs_retrieved = total_relevant_docs_retrieved
+            if total_documents_retrieved == 5:
+                break
+        i += 1
+        # print("relevant docs: " + str(total_relevant_docs_retrieved) + "; retrieved: " + str(total_documents_retrieved))
+        pm5[q] = total_relevant_docs_retrieved/total_documents_retrieved
+
+    for q in pm5:
+        print("pm@5 of Q" + str(q) + ": " + str(pm5[q]))
+
+
+    # PM@10:
+    pm10 = dict()
+    i = 0
+    for q in topics:
+        total_relevant_docs_retrieved = 0
+        total_documents_retrieved = 0
+        for j in score_sorted[i]:
+            total_documents_retrieved += 1
+            try:
+                if rel_score[q][j+1] > 0:
+                    total_relevant_docs_retrieved+=1
+            except:
+                total_relevant_docs_retrieved = total_relevant_docs_retrieved
+            if total_documents_retrieved == 10:
+                break
+        i += 1
+        # print("relevant docs: " + str(total_relevant_docs_retrieved) + "; retrieved: " + str(total_documents_retrieved))
+        pm10[q] = total_relevant_docs_retrieved/total_documents_retrieved
+
+    for q in pm10:
+        print("pm@10 of Q" + str(q) + ": " + str(pm10[q]))
+
+
+    print("Evaluating relevance score: COMPLETE!")
+
+
 def calc_term_freq_col(res):
     count = 0
     for doc in res:
@@ -137,6 +213,7 @@ def calc_term_freq_query(query, word):
         if i == word:
             count+=1
     return count
+
 
 def read_topic_file():
     print("Reading topics.xml file...")
