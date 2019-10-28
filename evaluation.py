@@ -18,16 +18,32 @@ def main():
     print("avg: " + str(avg_doc_length))
     print("total length: " + str(total_length))
 
-    okapi_bm25(topics, terms, index, docs_length, avg_doc_length, total_length)
+    bm25_score = okapi_bm25(topics, terms, index, docs_length, avg_doc_length, total_length)
+
+    query_count = 0
+    for q in topics:
+        print(topics[q])
+        for j in range(0, len(docs_length)):
+            if bm25_score[query_count][j] > 0:
+                print("DOC: " + str(j) + "; Score: " + str(bm25_score[query_count][j]))
+
+        query_count+=1
 
 
 def okapi_bm25(topics, terms, index, docs_length, avg_doc_length, total_length):
-    score_dq = 0
+    print("calculating relevance score using BM25...")
+    doc_score = [0]*len(topics)
+    print("len: " + str(len(docs_length)))
+    for i in range(0, len(topics)):
+        doc_score[i] = [0]*len(docs_length)
+
     k1 = 1.2
     k2 = 140
     b = 0.75
     D = len(docs_length) # number of documents
-    for dl in range (0, len(docs_length)): # for every document in corpus
+
+    for dl in range(0, len(docs_length)): # for every document in corpus
+        query_count = 0
         for q in topics: # for every query 'q' in topics
             for i in topics[q]: # for every word 'i' in the query
 
@@ -37,16 +53,18 @@ def okapi_bm25(topics, terms, index, docs_length, avg_doc_length, total_length):
                 res = index[term_id]
                 dfi = len(res)
                 tfdi = calc_term_freq_doc(dl+1, res)
-                tfqi = calc_term_freq_query(q, i)
+                tfqi = 1 # calc_term_freq_query(q, i)
+                x1 = math.log2((D + 0.5)/dfi + 0.5)
+                y1 = ((1 + k1)*tfdi)/(K+tfdi)
+                z1 = ((1 + k2)*tfqi)/(k2 + tfqi)
+                score = x1 * y1 * z1
+                doc_score[query_count][dl] += score
+                if doc_score[query_count][dl] > 0:
+                    print(doc_score[query_count][dl])
+            query_count += 1
 
-                print("Number of documents containing term '" + i + "': " + str(len(res)))
-
-                print("tfdi: " + str(tfdi) + " | tfqi: " + str(tfqi))
-                x = math.log2((D + 0.5)/dfi + 0.5)
-                y = ((1 + k1)*tfdi)/(K+tfdi)
-                z = ((1 + k2)*tfqi)/(k2 + tfqi)
-
-                score = x*y*z
+    print("calculating relevance score using BM25: COMPLETE!")
+    return doc_score
 
 
 
@@ -54,7 +72,6 @@ def okapi_bm25(topics, terms, index, docs_length, avg_doc_length, total_length):
 def calc_term_freq_doc(doc_id, res):
     for doc in res:
         if doc == doc_id:
-            print(doc)
             return len(res[doc]) # counting positions in document
     return 0
 
