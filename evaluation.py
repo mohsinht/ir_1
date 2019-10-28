@@ -5,6 +5,7 @@ import re
 from nltk.stem import PorterStemmer
 from xml.dom import minidom
 import math
+import numpy
 
 
 def main():
@@ -21,14 +22,29 @@ def main():
     # bm25_score = okapi_bm25(topics, terms, index, docs_length, avg_doc_length)
     ds_score = dirichlet_smoothing(topics, terms, index, docs_length, avg_doc_length, total_length)
 
-    query_count = 0
-    for q in topics:
-        print(topics[q])
-        for j in range(0, len(docs_length)):
-            if ds_score[query_count][j] > 0:
-                print("DOC: " + str(j) + "; Score: " + str(ds_score[query_count][j]))
+    ds_score_sorted = [0]*len(topics)
+    for i in range(0, len(topics)):
+        ds_score_sorted[i] = [0]*len(docs_length)
 
-        query_count+=1
+    # sort these scores:
+    for i in range(0, len(topics)):
+        ds_score_sorted[i] = numpy.argsort(ds_score[i], -1) # argsort sorts in ascending order
+        ds_score_sorted[i] = ds_score_sorted[i][::-1] # reverse
+
+    for i in range(0, len(topics)):
+        for j in ds_score_sorted[i]:
+            print("DOC: " + str(j+1) + "; Score: " + str(ds_score[i][j]))
+        break
+
+
+    # query_count = 0
+    # for q in topics:
+    #     print(topics[q])
+    #     for j in range(0, len(docs_length)):
+    #         if ds_score[query_count][j] > 0:
+    #             print("DOC: " + str(j) + "; Score: " + str(ds_score[query_count][j]))
+    #     break;
+    #     query_count+=1
 
 
 def okapi_bm25(topics, terms, index, docs_length, avg_doc_length):
@@ -82,7 +98,7 @@ def dirichlet_smoothing(topics, terms, index, docs_length, avg_doc_length, total
                 term_id = terms[i]
                 res = index[term_id]
                 term_count_in_doc = calc_term_freq_doc(dl+1, i)
-                
+
                 N = docs_length[dl]
                 meu = avg_doc_length
                 term_count_in_collection = calc_term_freq_col(res)
@@ -93,6 +109,7 @@ def dirichlet_smoothing(topics, terms, index, docs_length, avg_doc_length, total
                 probCOL = (term_count_in_collection)/total_length
                 prob = (N/(N+meu))*probDOC + (meu/(N+meu))*probCOL
                 doc_score[query_count][dl] *= prob
+
 
             query_count += 1
 
