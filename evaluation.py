@@ -21,8 +21,8 @@ def main():
     print("avg: " + str(avg_doc_length))
     print("total length: " + str(total_length))
 
-    # bm25_score = okapi_bm25(topics, terms, index, docs_length, avg_doc_length)
-    ds_score = dirichlet_smoothing(topics, terms, index, docs_length, avg_doc_length, total_length)
+    ds_score = okapi_bm25(topics, terms, index, docs_length, avg_doc_length)
+    #ds_score = dirichlet_smoothing(topics, terms, index, docs_length, avg_doc_length, total_length)
 
     ds_score_sorted = [0]*len(topics)
     for i in range(0, len(topics)):
@@ -140,7 +140,7 @@ def evaluate_score(score, score_sorted, doc_ids, topics):
             relevency_score = arr[3]
             doc_id = doc_ids[document_name]
             rel_score[query_number][doc_id] = int(relevency_score)
-            print("doc_id: " + str(doc_id) + "; query_number" + str(arr[0]) + "; score: " + str(rel_score[query_number][doc_id]))
+            # print("doc_id: " + str(doc_id) + "; query_number" + str(arr[0]) + "; score: " + str(rel_score[query_number][doc_id]))
 
     # reading done
 
@@ -189,6 +189,53 @@ def evaluate_score(score, score_sorted, doc_ids, topics):
     for q in pm10:
         print("pm@10 of Q" + str(q) + ": " + str(pm10[q]))
 
+
+
+    # PM@20:
+    pm20 = dict()
+    i = 0
+    for q in topics:
+        total_relevant_docs_retrieved = 0
+        total_documents_retrieved = 0
+        for j in score_sorted[i]:
+            total_documents_retrieved += 1
+            try:
+                if rel_score[q][j + 1] > 0:
+                    total_relevant_docs_retrieved += 1
+            except:
+                total_relevant_docs_retrieved = total_relevant_docs_retrieved
+            if total_documents_retrieved == 20:
+                break
+        i += 1
+        # print("relevant docs: " + str(total_relevant_docs_retrieved) + "; retrieved: " + str(total_documents_retrieved))
+        pm20[q] = total_relevant_docs_retrieved / total_documents_retrieved
+
+    for q in pm20:
+        print("pm@20 of Q" + str(q) + ": " + str(pm20[q]))
+
+
+
+    # PM@30:
+    pm30 = dict()
+    i = 0
+    for q in topics:
+        total_relevant_docs_retrieved = 0
+        total_documents_retrieved = 0
+        for j in score_sorted[i]:
+            total_documents_retrieved += 1
+            try:
+                if rel_score[q][j + 1] > 0:
+                    total_relevant_docs_retrieved += 1
+            except:
+                total_relevant_docs_retrieved = total_relevant_docs_retrieved
+            if total_documents_retrieved == 30:
+                break
+        i += 1
+        # print("relevant docs: " + str(total_relevant_docs_retrieved) + "; retrieved: " + str(total_documents_retrieved))
+        pm30[q] = total_relevant_docs_retrieved / total_documents_retrieved
+
+    for q in pm30:
+        print("pm@30 of Q" + str(q) + ": " + str(pm30[q]))
 
     print("Evaluating relevance score: COMPLETE!")
 

@@ -60,11 +60,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/evaluation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+            <state relative-caret-position="-2474">
+              <caret line="81" column="25" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="25" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#943#2075#0" />
                 <element signature="e#2256#2575#0" />
                 <element signature="e#3066#3143#0" />
                 <element signature="e#1611#1754#0" />
@@ -133,6 +132,11 @@
       <find>s</find>
       <find>672</find>
       <find>readDocIds</find>
+      <find>clueweb12-0101wb-39-29794</find>
+      <find>250</find>
+      <find>250;</find>
+      <find>250;</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,10 +160,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1358" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -460,10 +464,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19074778" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22395833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -473,7 +477,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="7" visible="true" weight="0.35666218" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="7" visible="true" weight="0.27014217" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32974428" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -625,11 +629,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/evaluation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+        <state relative-caret-position="-2474">
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="25" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#943#2075#0" />
             <element signature="e#2256#2575#0" />
             <element signature="e#3066#3143#0" />
             <element signature="e#1611#1754#0" />
