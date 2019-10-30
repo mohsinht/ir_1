@@ -73,7 +73,7 @@ def okapi_bm25(topics, terms, index, docs_length, avg_doc_length):
                 dfi = len(res)
                 tfdi = calc_term_freq_doc(dl+1, res)
                 tfqi = 1 # calc_term_freq_query(q, i)
-                x1 = math.log2((D + 0.5)/dfi + 0.5)
+                x1 = math.log2((D + 0.5)/(dfi + 0.5))
                 y1 = ((1 + k1)*tfdi)/(K+tfdi)
                 z1 = ((1 + k2)*tfqi)/(k2 + tfqi)
                 score = x1 * y1 * z1
@@ -237,7 +237,44 @@ def evaluate_score(score, score_sorted, doc_ids, topics):
     for q in pm30:
         print("pm@30 of Q" + str(q) + ": " + str(pm30[q]))
 
+
+    # MEAN AVERAGE PRECISION:
+    avg_prec = dict()
+    i = 0
+    for q in topics:
+        avg_prec[q] = 0
+        total_relevant_docs_retrieved = 0
+        total_documents_retrieved = 0
+        for j in score_sorted[i]:
+            total_documents_retrieved += 1
+            try:
+                if rel_score[q][j + 1] > 0:
+                    total_relevant_docs_retrieved += 1
+                    avg_prec[q] += total_relevant_docs_retrieved / total_documents_retrieved # precision at relevant docs
+            except:
+                total_relevant_docs_retrieved = total_relevant_docs_retrieved
+        i += 1
+        # print("relevant docs: " + str(total_relevant_docs_retrieved) + "; retrieved: " + str(total_documents_retrieved))
+        avg_prec[q] = avg_prec[q]/total_relevant_docs_for_query(q, rel_score)
+
+    sum_of_avg = 0
+    for q in avg_prec:
+        sum_of_avg += avg_prec[q]
+        print("avg_precision of Q" + str(q) + ": " + str(avg_prec[q]))
+
+    mean_value = sum_of_avg/len(avg_prec)
+    print("MEAN AVERAGE PRECISION: " + str(mean_value))
+
+
     print("Evaluating relevance score: COMPLETE!")
+
+
+def total_relevant_docs_for_query(query, rel_score):
+    count = 0
+    for j in rel_score[query]:
+        if rel_score[query][j] > 0:
+            count += 1
+    return count
 
 
 def calc_term_freq_col(res):
